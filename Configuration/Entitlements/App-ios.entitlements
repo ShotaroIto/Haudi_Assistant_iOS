@@ -21,12 +21,13 @@
 	<true/>
 	<key>com.apple.developer.usernotifications.communication</key>
 	<true/>
-	<key>com.apple.security.application-groups</key>
-	<array>
-		<string>group.$(BUNDLE_ID_PREFIX).homeassistant$(BUNDLE_ID_SUFFIX)</string>
-	</array>
 	<key>com.apple.developer.usernotifications.time-sensitive</key>
 	<true/>
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>group.jp.haudi.HAApp.HomeAssistant.dev</string>
+		<string>group.jp.haudi.haapp.homeassistant.dev</string>
+	</array>
 	<key>keychain-access-groups</key>
 	<array>
 		<string>$(AppIdentifierPrefix)$(BUNDLE_ID_PREFIX).HomeAssistant$(BUNDLE_ID_SUFFIX)</string>
