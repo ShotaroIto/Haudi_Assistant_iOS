@@ -73,7 +73,7 @@ public struct ThemeColors: Codable {
 private extension ThemeColors.Color {
     var `default`: UIColor {
         switch self {
-        case .appHeaderBackgroundColor: return UIColor(red: 0.01, green: 0.66, blue: 0.96, alpha: 1.0)
+        case .appHeaderBackgroundColor: return UIColor(red: 84/255, green: 186/255, blue: 185/255, alpha: 1.0)
         case .primaryBackgroundColor: return UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1.0)
         case .primaryColor: return UIColor.white
         case .textPrimaryColor: return UIColor.white
