@@ -25,7 +25,7 @@ class OnboardingWelcomeViewController: UIViewController, OnboardingViewControlle
         stackView.addArrangedSubview(equalSpacers.next())
         stackView.addArrangedSubview(with(LottieAnimationView(animation: .named("ha-loading"))) {
             animationView = $0
-            $0.loopMode = .playOnce
+            $0.loopMode = .loop
 
             NSLayoutConstraint.activate([
                 with($0.widthAnchor.constraint(equalToConstant: 240.0)) {
@@ -90,7 +90,7 @@ class OnboardingWelcomeViewController: UIViewController, OnboardingViewControlle
 
     @objc private func learnMoreTapped(_ sender: UIButton) {
         present(
-            SFSafariViewController(url: .init(string: "http://www.home-assistant.io")!),
+            SFSafariViewController(url: .init(string: "https://haudi.jp/")!),
             animated: true,
             completion: nil
         )
