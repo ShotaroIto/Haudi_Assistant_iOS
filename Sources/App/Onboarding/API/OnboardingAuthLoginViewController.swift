@@ -64,9 +64,9 @@ class OnboardingAuthLoginViewControllerImpl: UIViewController, OnboardingAuthLog
       
         
               DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                 let hiddenProfileScript : String =
-                  "document.getElementsByTagName('ha-authorize')[0].shadowRoot.querySelector('p').innerHTML='https://familia-towa1.haudi.app/ Haudi Familia インスタンスへのアクセスを許可しようとしています。'; document.getElementsByTagName('ha-authorize')[0].shadowRoot.querySelector('div').innerHTML='Haudi Familiaでログインします。'; document.getElementsByClassName('header')[0].innerHTML = 'Haudi Familia'; document.getElementsByClassName('header')[0].style.color='#50A69F';"
-                  self.webView.evaluateJavaScript(hiddenProfileScript) { _, _ in
+                 let customHTML : String =
+                  "document.getElementsByTagName('ha-authorize')[0].shadowRoot.querySelector('p').innerHTML = 'https://familia-towa1.haudi.app/ Haudi Familia インスタンスへのアクセスを許可しようとしています。'; document.getElementsByTagName('ha-authorize')[0].shadowRoot.querySelector('div').innerHTML = 'Haudi Familiaでログインします。'; document.getElementsByClassName('header')[0].innerHTML = 'Haudi Familia'; document.getElementsByClassName('header')[0].style.color = '#50A69F'; document.getElementsByClassName('header')[0].style.fontWeight = 'bold';"
+                  self.webView.evaluateJavaScript(customHTML) { _, _ in
                   }
               }
         
