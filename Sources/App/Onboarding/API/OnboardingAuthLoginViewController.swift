@@ -58,6 +58,18 @@ class OnboardingAuthLoginViewControllerImpl: UIViewController, OnboardingAuthLog
 
     @objc private func refresh() {
         webView.load(.init(url: authDetails.url))
+        
+  
+
+      
+        
+              DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                 let hiddenProfileScript : String =
+                  "document.getElementsByTagName('ha-authorize')[0].shadowRoot.querySelector('p').innerHTML='https://familia-towa1.haudi.app/ Haudi Familia インスタンスへのアクセスを許可しようとしています。'; document.getElementsByTagName('ha-authorize')[0].shadowRoot.querySelector('div').innerHTML='Haudi Familiaでログインします。'; document.getElementsByClassName('header')[0].innerHTML = 'Haudi Familia'; document.getElementsByClassName('header')[0].style.color='#50A69F';"
+                  self.webView.evaluateJavaScript(hiddenProfileScript) { _, _ in
+                  }
+              }
+        
     }
 
     override func viewDidLoad() {
@@ -85,8 +97,12 @@ class OnboardingAuthLoginViewControllerImpl: UIViewController, OnboardingAuthLog
             webView.topAnchor.constraint(equalTo: view.topAnchor),
             webView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
-
+        
+        
+        
         refresh()
+        
+       
     }
 
     func webView(
