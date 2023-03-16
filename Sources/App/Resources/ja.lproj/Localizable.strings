@@ -249,8 +249,8 @@
 "onboarding.scanning.manual" = "アドレスを手動で入力";
 "onboarding.scanning.manual_hint" = "サーバーが見つかりませんか？";
 "onboarding.scanning.title" = "サーバーのスキャン";
-"onboarding.welcome.description" = "このアプリは、あなたのHome Assiatantのサーバーに接続し、あなたとあなたの携帯電話に関するデータを統合することができます。";
-"onboarding.welcome.title" = "Haudi Familiaへようこそ！
+"onboarding.welcome.description" = "このアプリは、あなたのHaudi Familiaのサーバーに接続し、あなたとあなたの携帯電話に関するデータを統合することができます。";
+"onboarding.welcome.title" = "Familiaへようこそ！
 %@";
 "open_label" = "オープン";
 "preview_output" = "プレビュー出力";
