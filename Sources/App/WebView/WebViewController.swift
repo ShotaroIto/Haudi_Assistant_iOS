@@ -494,7 +494,17 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, U
 
             if let webviewURL = server.info.connection.webviewURL() {
                 decisionHandler(.cancel)
+                webView.isHidden = true//伊藤
                 webView.load(URLRequest(url: webviewURL))
+                //shotaro start
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                    let customHTML : String =
+                    "document.getElementById('ha-launch-screen').style.display='none';"
+                    self.webView.evaluateJavaScript(customHTML) { _, _ in
+                    }
+                    self.webView.isHidden = false
+                }
+                //shotaro end
             } else {
                 // we don't have anything we can do about this
                 decisionHandler(.allow)
@@ -641,15 +651,40 @@ class WebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, U
             Current.Log.info("loading default url path: \(webviewURL.path)")
             request = URLRequest(url: webviewURL)
         }
-
+        webView.isHidden = true//伊藤
         webView.load(request)
+        //shotaro start
+       DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                let customHTML : String =
+                 "document.getElementById('ha-launch-screen').style.display='none';"
+                 self.webView.evaluateJavaScript(customHTML) { _, _ in
+                 }
+           self.webView.isHidden = false
+             }
+       //shotaro end
+        
     }
 
     @objc private func refresh() {
         // called via menu/keyboard shortcut too
         if let webviewURL = server.info.connection.webviewURL() {
             if webView.url?.baseIsEqual(to: webviewURL) == true, !lastNavigationWasServerError {
+                
+                webView.isHidden = true//伊藤
+                
                 webView.reload()
+                
+                //shotaro start
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                    let customHTML : String =
+                    "document.getElementById('ha-launch-screen').style.display='none';"
+                    self.webView.evaluateJavaScript(customHTML) { _, _ in
+                    }
+                    self.webView.isHidden = false
+                }
+                //shotaro end
+            
+                
             } else {
                 webView.load(URLRequest(url: webviewURL))
             }

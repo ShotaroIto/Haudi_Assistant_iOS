@@ -6,8 +6,7 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.jp.haudi.HAApp.HomeAssistant.dev</string>
-		<string>group.jp.haudi.haapp.homeassistant.dev</string>
+		<string>group.touwa.homeassistant.dev</string>
 	</array>
 	<key>keychain-access-groups</key>
 	<array>
